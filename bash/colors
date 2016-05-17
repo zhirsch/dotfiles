@@ -1,0 +1,14 @@
+# mode: -*- shell-script -*-
+
+txtund=$(tput sgr 0 1)
+txtbol=$(tput bold)
+
+txtred=$(tput setaf 1)
+txtgre=$(tput setaf 2)
+txtyel=$(tput setaf 3)
+txtblu=$(tput setaf 4)
+txtpur=$(tput setaf 5)
+txtcya=$(tput setaf 6)
+txtwhi=$(tput setaf 7)
+
+txtrst=$(tput sgr0)
