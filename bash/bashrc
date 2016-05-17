@@ -1,0 +1,59 @@
+# mode: -*- shell-script -*-
+# ~/.bashrc: executed by bash(1) for non-login shells.
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# don't put duplicate lines in the history. See bash(1) for more options
+export HISTCONTROL=ignoredups
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+
+# Common color definitions.
+source ~/.colors
+
+# Set the command prompt.
+case "$TERM" in
+  xterm*|rxvt*|screen)
+    COLOR='$(if [[ $? = 0 ]]; then echo -en "\[${txtcya}\]"; else echo -en "\[${txtred}\]"; fi)'
+    PS1="\[${txtgre}\]\u@\h \[${txtblu}\]\w\n${COLOR}\$\[${txtrst}\] "
+    ;;
+  *)
+    PS1='\u@\h:\w\$ '
+    ;;
+esac
+
+
+# Alias definitions.
+alias cp='cp -i'
+alias ls='ls --color=auto -Fh'
+alias mv='mv -i'
+alias rm='rm -i'
+alias time=/usr/bin/time
+
+# Environment variables.
+export EDITOR=emacs
+export GREP_OPTIONS=--color=auto
+export LESS=-iRsS
+export PAGER=less
+
+# Use UTF-8 as the default locale.
+export LC=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LESSCHARSET=utf-8
+
+# Completion rules.
+if [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
+fi
+
+# Site-specific customizations.
+if [ -d .site/ ]; then
+   source .site/bashrc
+fi
