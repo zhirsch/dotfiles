@@ -27,7 +27,7 @@ function install {
   local DST=$2
 
   if [ -e "$DST" ]; then
-    if ! colordiff -U10 "$SRC" "$DST"; then
+    if ! colordiff -U10 "$DST" "$SRC"; then
       if ! ok "$DST has changes! Continue? "; then
         return 0
       fi
