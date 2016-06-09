@@ -54,6 +54,6 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Site-specific customizations.
-if [ -d .site/ ]; then
-   source .site/bashrc
+if [ -d ~/.site/ ]; then
+   source ~/.site/bashrc
 fi
