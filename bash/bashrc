@@ -31,11 +31,16 @@ esac
 
 # Alias definitions.
 alias cp='cp -i'
-alias grep='grep --color=auto'
 alias ls='ls --color=auto -Fh'
 alias mv='mv -i'
 alias rm='rm -i'
 alias time=/usr/bin/time
+
+# Turn on color output for all grep flavors.
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias rgrep='rgrep --color=auto'
 
 # Environment variables.
 export EDITOR=emacs
