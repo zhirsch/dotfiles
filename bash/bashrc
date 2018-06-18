@@ -35,10 +35,10 @@ alias ls='ls --color=auto -Fh'
 alias mv='mv -i'
 alias rm='rm -i'
 alias time=/usr/bin/time
+alias grep='grep --color=auto'
 
 # Environment variables.
 export EDITOR=emacs
-export GREP_OPTIONS=--color=auto
 export LESS=-iRsS
 export PAGER=less
 

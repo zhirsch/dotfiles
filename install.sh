@@ -41,3 +41,12 @@ install $PWD/bash/bash_logout ~/.bash_logout
 install $PWD/bash/bash_profile ~/.bash_profile
 install $PWD/bash/bashrc ~/.bashrc
 install $PWD/bash/colors ~/.colors
+
+install $PWD/X/Xdefaults ~/.Xdefaults
+install $PWD/X/xsession ~/.xsession
+
+install $PWD/emacs/emacs ~/.emacs
+
+mkdir -p ~/.i3
+install $PWD/i3/config ~/.i3/config
+install $PWD/i3/i3status.conf ~/.i3status.conf

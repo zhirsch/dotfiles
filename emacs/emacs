@@ -1,0 +1,55 @@
+; Set Ctrl-x,l to prompt for a line to jump to.
+(global-set-key "\C-xl" 'goto-line)
+
+; Set Ctrl-x,w to sort the region.
+(global-set-key "\C-xw" 'sort-lines)
+
+; Font lock always and forever
+(global-font-lock-mode t)
+
+; Show me line and column numbers
+(line-number-mode t)
+(setq column-number-mode t)
+
+; Don't show some superfulous window crap.
+(menu-bar-mode 0)
+(setq inhibit-splash-screen t)
+
+; Don't use tabs by default
+(setq-default indent-tabs-mode nil)
+
+; I like highlighting the mark when active.
+(setq transient-mark-mode t)
+
+; Show extra whitespace.
+(require 'show-wspace)
+(add-hook 'font-lock-mode-hook 'show-ws-highlight-trailing-whitespace)
+
+; Don't make backup or autosave files
+(setq backup-inhibited t)
+(setq auto-save-default nil)
+
+; Highlight important words.
+(font-lock-add-keywords
+ 'python-mode
+ '(("\\<\\(HACK\\|XXX\\|TODO\\|BUG\\)\\>" 1 font-lock-warning-face prepend)))
+(font-lock-add-keywords
+ 'html-mode
+ '(("\\<\\(HACK\\|XXX\\|TODO\\|BUG\\)\\>" 1 font-lock-warning-face prepend)))
+(font-lock-add-keywords
+ 'c++-mode
+ '(("\\<\\(HACK\\|XXX\\|TODO\\|BUG\\)\\>" 1 font-lock-warning-face prepend)))
+(font-lock-add-keywords
+ 'java-mode
+ '(("\\<\\(HACK\\|XXX\\|TODO\\|BUG\\)\\>" 1 font-lock-warning-face prepend)))
+(set-face-inverse-video-p font-lock-warning-face t)
+
+; Ensure that there's a new line at the end of every file.
+(setq require-final-newline t)
+
+(require 'paren)
+(show-paren-mode 1)
+
+(setq-default fill-column 80)
+
+(put 'narrow-to-region 'disabled nil)

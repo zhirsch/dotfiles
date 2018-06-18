@@ -1,0 +1,7 @@
+#!/bin/bash
+gnome-settings-daemon &
+xsetroot -solid rgb:40/40/40
+xrdb ~/.Xdefaults
+xautolock -time 10 -locker "i3lock -c 000000" &
+urxvtd -q -f -o
+exec i3
