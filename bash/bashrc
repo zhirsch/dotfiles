@@ -31,10 +31,12 @@ esac
 
 # Alias definitions.
 alias cp='cp -i'
+alias grep='grep --color=auto'
 alias ls='ls --color=auto -Fh'
 alias mv='mv -i'
 alias rm='rm -i'
 alias time=/usr/bin/time
+alias grep='grep --color=auto'
 
 # Turn on color output for all grep flavors.
 alias grep='grep --color=auto'
@@ -59,6 +61,6 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # Site-specific customizations.
-if [ -d .site/ ]; then
-   source .site/bashrc
+if [ -d ~/.site/ ]; then
+   source ~/.site/bashrc
 fi
