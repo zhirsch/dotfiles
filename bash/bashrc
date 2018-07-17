@@ -44,7 +44,7 @@ alias rgrep='rgrep --color=auto'
 
 # Environment variables.
 export EDITOR=emacs
-export LESS=-iRsS
+export LESS=-iRS
 export PAGER=less
 
 # Use UTF-8 as the default locale.
