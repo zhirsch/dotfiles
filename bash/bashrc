@@ -32,7 +32,14 @@ esac
 # Alias definitions.
 alias cp='cp -i'
 alias grep='grep --color=auto'
-alias ls='ls --color=auto -Fh'
+case "$OSTYPE" in
+  darwin*)
+    alias ls='ls -FGh'
+    ;;
+  *)
+    alias ls='ls --color=auto -Fh'
+    ;;
+esac
 alias mv='mv -i'
 alias rm='rm -i'
 alias time=/usr/bin/time
