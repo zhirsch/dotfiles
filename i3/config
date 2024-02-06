@@ -10,7 +10,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
 
-new_window 1pixel
+default_border pixel 1
 
 # start a terminal
 bindsym $mod+Shift+Return exec urxvtc
@@ -44,6 +44,11 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
+
+bindsym $mod+Shift+Left move window left
+bindsym $mod+Shift+Right move window right
+bindsym $mod+Shift+Up move window up
+bindsym $mod+Shift+Down move window down
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
